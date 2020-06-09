@@ -1,0 +1,8 @@
+body{
+    background-image: linear-gradient(to right, rgb(5, 5, 184), rgb(155, 191, 245));
+}
+h1{
+    background-image: linear-gradient(to right, black, rgb(197, 197, 197));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transaparent;
+}
