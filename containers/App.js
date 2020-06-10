@@ -1,7 +1,8 @@
 import React from "react";
-import Cardlist from "./Cardlist";
-import Scroll from "./Scroll.js";
-import Searchbox from "./Searchbox";
+import Cardlist from "../components/Cardlist";
+import Scroll from "../components/Scroll.js";
+import Searchbox from "../components/Searchbox";
+import "./App.css";
 // import {robots} from './robots';// yaha robot call ho raha hai
 
 
@@ -32,12 +33,14 @@ class App extends React.Component {
         // creating our own functions  
     
     }
-    render() {    
-        const filteredRobots = this.state.robots.filter(robots =>{ 
+    render() {  
+        const {robots,searchfield} = this.state ;  // now this.state could be removed from everywhere
+        // const filteredRobots = this.state.robots.filter(robot =>{ 
+        const filteredRobots = robots.filter(robots =>{ 
             // return robots.email.toLowerCase().includes(this.state.searchfield.toLowerCase());
-            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+            return robots.name.toLowerCase().includes(searchfield.toLowerCase());
         })
-        if(this.state.robots.length === 0){
+        if(!robots.length){
             return <h1>Loading</h1>
         } 
         else{
